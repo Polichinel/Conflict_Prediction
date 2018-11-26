@@ -1,0 +1,43 @@
+Notes from Bertel (and devrived ideas):
+
+TJEK HVOR LANG TID EN SIMPLE LOGIT TAGER I STAN MED DIT SÆT!!!
+
+Defferentier mellem onset og ongoing
+
+	- ongoing i celle (dummy or count fatalities (log?)?)
+	- ongoing i land (dummy or total count fatalities(log?) ?)
+	- ongoing i nabo land (count lande)
+
+	- hvordan? Du kunne jo bare bruge Uppsala's defination?
+	- De har også data på lande niveau som måske er lettere at inkludere
+
+
+Han kunne godt lide ideen om decay functions og har selv lavet noget lig (find det ;) ).
+
+Der er ikke statistisk forskal på om du bruger min(0) eller min(1) i dine interaction, men din vej er måske lettere at tolke
+
+I feature selection fokuser på unbalanced set. Bertel er mest intresseret i Recall.. Men du kan jo netop selv sætte thresshold ned som i snakked om.
+
+men det er vel netop her en recall-precision curve er smartere?
+
+
+Til evaluering giver det jo også mening om dem du giver giver højest sandsynlighed er den der får konflikter - ikke i sig selv hvad denne "højeste" sandsynlighed er.
+
+
+Mere klar i spyttet vedr. hvorfor:
+	- esitmation vs. prediction
+	- Hvorfor Bayesianske multi-level model
+
+Både "time since" og "distance to" kunne jo modeleres som continues heirarkies via GP, vel?
+
+Der er jo ikke nogel der siger at heirarkiet kun skal være "dumme" features. Måske du også her kan sætte ungoing og ikke ongoing ind? Ud over at de måske kræver helt forskellige features..
+- Men kunne have lande i nested i ongoing/not_going og celler nested i ongoing/not_going
+- og Smatidigt have hhv. lande og celler nested i  "time since" og "distance to"(ish)... Det ville være frækt.
+
+
+I bilag og forkort al din variable beskrivelse
+
+Alt. til "distance to" er bare "conflict i nabo celler?" og "måske conflict i nabos nabo"
+
+fint at kontrolere for latiutude - countinuerligt heirarki ;) 
+
